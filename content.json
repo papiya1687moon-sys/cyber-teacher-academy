@@ -1,0 +1,222 @@
+{
+  "lessons": [
+    {
+      "id": "01",
+      "title": "Cyber Security কী?",
+      "explanation": "Cyber Security মানে হলো কম্পিউটার, ফোন, নেটওয়ার্ক ও তথ্যকে অননুমোদিত ব্যবহার, ক্ষতি ও চুরি থেকে নিরাপদ রাখা।",
+      "diagram": "🛡️ ডিভাইস → 🔐 নিরাপত্তা → 📦 তথ্য"
+    },
+    {
+      "id": "02",
+      "title": "Internet কীভাবে কাজ করে?",
+      "explanation": "তুমি যখন কোনো ওয়েবসাইট খোলো, তোমার ডিভাইস নেটওয়ার্কের মাধ্যমে সার্ভারের সঙ্গে যোগাযোগ করে এবং প্রয়োজনীয় ডেটা ফিরে আসে।",
+      "diagram": "📱 ফোন → 📡 Router → 🌐 Internet → 🖥️ Server"
+    },
+    {
+      "id": "03",
+      "title": "Surface Web কী?",
+      "explanation": "যে ওয়েব পেজগুলো সাধারণ সার্চ ইঞ্জিনে খুঁজে পাওয়া যায়, সেগুলোর বড় অংশ Surface Web-এর মধ্যে পড়ে।",
+      "diagram": "🔎 Search → 🌐 Public Web"
+    },
+    {
+      "id": "04",
+      "title": "Deep Web কী?",
+      "explanation": "যে কনটেন্ট সাধারণ সার্চ ইঞ্জিনে index করা থাকে না—যেমন ব্যক্তিগত account area বা private database—সেগুলো Deep Web-এর উদাহরণ হতে পারে।",
+      "diagram": "🔒 Login → 📄 Private Content"
+    },
+    {
+      "id": "05",
+      "title": "Dark Web কী?",
+      "explanation": "Dark Web হলো এমন ওয়েবের অংশ, যেখানে বিশেষ privacy network ও software ব্যবহার করে কিছু service-এ প্রবেশ করা হয়। Dark Web আর Deep Web এক জিনিস নয়।",
+      "diagram": "🌐 Surface → 📦 Deep → 🕸️ Dark"
+    },
+    {
+      "id": "06",
+      "title": "Tor কী?",
+      "explanation": "Tor একটি privacy-oriented network। এটি traffic-কে একাধিক relay-এর মাধ্যমে পাঠিয়ে উৎস ও গন্তব্যের মধ্যে সরাসরি সংযোগ আড়াল করতে সাহায্য করে।",
+      "diagram": "📱 → 🧅 Relay 1 → 🧅 Relay 2 → 🌐"
+    },
+    {
+      "id": "07",
+      "title": "Onion Service কী?",
+      "explanation": "Onion service হলো Tor network-এর এমন service যার address সাধারণত .onion দিয়ে শেষ হয় এবং Tor network-এর মাধ্যমে ব্যবহার করা হয়।",
+      "diagram": "🧅 .onion → 🔐 Tor Network"
+    },
+    {
+      "id": "08",
+      "title": "Privacy বনাম Anonymity",
+      "explanation": "Privacy মানে তথ্যের ওপর নিয়ন্ত্রণ ও সুরক্ষা; anonymity মানে পরিচয় গোপন রাখার চেষ্টা। দুটো একই বিষয় নয়।",
+      "diagram": "👤 Identity ≠ 📄 Data Privacy"
+    },
+    {
+      "id": "09",
+      "title": "Phishing চিনবে কীভাবে?",
+      "explanation": "ভুয়া login page, জরুরি হওয়ার চাপ, সন্দেহজনক link ও অস্বাভাবিক domain—এসব phishing-এর সাধারণ warning sign।",
+      "diagram": "📩 Message → 🔗 Link → ⚠️ Verify"
+    },
+    {
+      "id": "10",
+      "title": "Password Security",
+      "explanation": "দীর্ঘ ও আলাদা password ব্যবহার, password reuse না করা এবং সম্ভব হলে MFA চালু করা account security বাড়ায়।",
+      "diagram": "🔑 Strong Password + 📲 MFA"
+    },
+    {
+      "id": "11",
+      "title": "MFA কী?",
+      "explanation": "Multi-Factor Authentication-এ password-এর পাশাপাশি দ্বিতীয় একটি verification factor লাগে।",
+      "diagram": "🔑 Password + 📱 Code/Key"
+    },
+    {
+      "id": "12",
+      "title": "Networking Basics",
+      "explanation": "IP address, port, protocol এবং DNS—নেটওয়ার্ক বোঝার মৌলিক building block।",
+      "diagram": "📍 IP + 🚪 Port + 📜 Protocol + 📖 DNS"
+    },
+    {
+      "id": "13",
+      "title": "DNS কী?",
+      "explanation": "DNS domain name-কে সংশ্লিষ্ট IP address খুঁজে পেতে সাহায্য করে—যেমন নাম দিয়ে ঠিকানা খোঁজা।",
+      "diagram": "🌐 example.com → 📍 IP"
+    },
+    {
+      "id": "14",
+      "title": "HTTP ও HTTPS",
+      "explanation": "HTTP ওয়েব যোগাযোগের protocol; HTTPS TLS encryption ব্যবহার করে browser ও server-এর মধ্যে data transmission সুরক্ষিত করতে সাহায্য করে।",
+      "diagram": "🌐 HTTP | 🔒 HTTPS"
+    },
+    {
+      "id": "15",
+      "title": "Linux Basics",
+      "explanation": "Terminal, files, directories, permissions এবং basic commands—cyber security lab-এর জন্য দরকারি ভিত্তি।",
+      "diagram": "⌨️ Terminal → 📁 Files → 🔐 Permissions"
+    },
+    {
+      "id": "16",
+      "title": "Ethical Hacking কী?",
+      "explanation": "Ethical hacking হলো অনুমতি নিয়ে system-এর দুর্বলতা খুঁজে নিরাপত্তা উন্নত করা। Scope ও permission আগে নির্ধারণ করা জরুরি।",
+      "diagram": "📜 Permission → 🔎 Test → 🛠️ Fix"
+    },
+    {
+      "id": "17",
+      "title": "Reconnaissance & OSINT",
+      "explanation": "অনুমোদিত security assessment-এ public information সংগ্রহ করে target-এর attack surface বোঝা যায়। ব্যক্তিগত তথ্যের অপব্যবহার নয়।",
+      "diagram": "🔎 Public Info → 🗺️ Attack Surface"
+    },
+    {
+      "id": "18",
+      "title": "Web Security Basics",
+      "explanation": "Input validation, authentication, authorization, session security ও secure configuration ওয়েব অ্যাপের গুরুত্বপূর্ণ নিরাপত্তা বিষয়।",
+      "diagram": "🌐 App → 🔐 Auth → 🧹 Input → 🛡️ Secure"
+    },
+    {
+      "id": "19",
+      "title": "Safe Vulnerability Lab",
+      "explanation": "নিজস্ব sandbox-এ ইচ্ছাকৃতভাবে দুর্বল application পরীক্ষা করে vulnerability বোঝা যায়। বাস্তব সিস্টেমে অনুমতি ছাড়া পরীক্ষা নয়।",
+      "diagram": "🧪 Sandbox → 🔎 Find → 🛠️ Fix"
+    },
+    {
+      "id": "20",
+      "title": "CTF Practice",
+      "explanation": "Capture The Flag lab-এ puzzle, web, crypto, forensics ও অন্যান্য নিরাপদ challenge সমাধান করে দক্ষতা বাড়ানো যায়।",
+      "diagram": "🏁 Challenge → 🧠 Solve → 🏆 Flag"
+    },
+    {
+      "id": "21",
+      "title": "Malware সম্পর্কে ধারণা",
+      "explanation": "Malware হলো ক্ষতিকর software। Virus, worm, trojan, ransomware ইত্যাদির আচরণ, প্রতিরোধ ও নিরাপদ analysis শেখা হবে।",
+      "diagram": "🦠 Malware → 🔍 Analyze → 🛡️ Defend"
+    },
+    {
+      "id": "22",
+      "title": "Incident Response",
+      "explanation": "Security incident হলে identify, contain, eradicate, recover ও lessons learned—এই ধারায় response পরিকল্পনা করা হয়।",
+      "diagram": "🚨 Detect → 🧱 Contain → 🔧 Recover"
+    },
+    {
+      "id": "23",
+      "title": "Dark Web Safety",
+      "explanation": "Dark Web-এ scam, phishing, malware ও অবৈধ content-এর ঝুঁকি থাকতে পারে। নিরাপদ শেখার জন্য controlled lab ব্যবহার করাই ভালো।",
+      "diagram": "🕸️ Dark Web → ⚠️ Risk → 🧪 Safe Lab"
+    },
+    {
+      "id": "24",
+      "title": "Final Assessment",
+      "explanation": "শেষ পরীক্ষায় network, privacy, web security, ethical hacking ও safe lab-এর ধারণা যাচাই হবে।",
+      "diagram": "📝 Quiz → 🧪 Lab → 🏆 Certificate"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Cyber Security-এর মূল উদ্দেশ্য কী?",
+      "options": [
+        "তথ্য ও সিস্টেম নিরাপদ রাখা",
+        "শুধু গেম খেলা",
+        "সব password প্রকাশ করা"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Deep Web কি Dark Web-এর সমান?",
+      "options": [
+        "হ্যাঁ",
+        "না",
+        "শুধু রাতে"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Tor কী?",
+      "options": [
+        "একটি privacy-oriented network",
+        "একটি password",
+        "একটি image editor"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Phishing-এর একটি লক্ষণ কোনটি?",
+      "options": [
+        "সন্দেহজনক login link",
+        "স্বাভাবিক bookmark",
+        "নিজের offline file"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Ethical hacking-এর আগে কী দরকার?",
+      "options": [
+        "অনুমতি ও নির্ধারিত scope",
+        "অন্যের password",
+        "গোপনে attack"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "HTTPS কী কাজে সাহায্য করে?",
+      "options": [
+        "ওয়েব যোগাযোগ সুরক্ষিত করতে",
+        "ফোন চার্জ দিতে",
+        "ছবি আঁকতে"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "MFA কী যোগ করে?",
+      "options": [
+        "অতিরিক্ত verification factor",
+        "আরেকটি wallpaper",
+        "নতুন browser"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "CTF কী?",
+      "options": [
+        "নিরাপদ challenge-based practice",
+        "ব্যাংকিং app",
+        "social media"
+      ],
+      "answer": 0
+    }
+  ]
+}

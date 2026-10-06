@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cyber Teacher Academy</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0b1220;color:#f6f7fb;font-family:system-ui,"Noto Sans Bengali",sans-serif}
+.app{max-width:500px;margin:auto;min-height:100vh;background:#111b2e}.top{padding:18px;background:#0e1727;position:sticky;top:0;z-index:2}
+.logo{font-weight:900;font-size:21px}.tag{opacity:.7;font-size:12px;margin-top:3px}
+.tabs{display:flex;gap:8px;margin-top:14px;overflow:auto}.tab{border:0;border-radius:12px;padding:9px 12px;background:#20304a;color:white;white-space:nowrap}.tab.active{background:#347ff3}
+.teacher{margin:16px;padding:16px;border-radius:20px;background:#20314d;display:flex;gap:13px}.avatar{font-size:48px;width:66px;height:66px;border-radius:50%;background:#f1c6a5;display:grid;place-items:center}
+.teacher b{font-size:15px}.speech{margin-top:5px;line-height:1.5;font-size:14px}
+.panel{margin:16px;padding:16px;border-radius:20px;background:#f5f0db;color:#172033;min-height:300px}
+.panel h2{margin:0 0 12px}.diagram{border:2px dashed #687182;padding:14px;border-radius:14px;line-height:1.8;font-weight:700;white-space:pre-line}
+.tip{margin-top:12px;background:#e4e8ef;padding:12px;border-radius:12px;line-height:1.55;font-size:13px}
+.progress{height:7px;background:#26354d;margin:0 16px 14px;border-radius:10px}.bar{height:100%;background:#4f91ff;width:4%}
+.row{display:flex;gap:9px;padding:0 16px 12px}.btn{flex:1;border:0;border-radius:13px;padding:12px;font-weight:800;background:#347ff3;color:#fff}.btn.alt{background:#293a55}
+.card{margin:10px 16px;padding:14px;border-radius:16px;background:#1b2940}.card small{opacity:.65}.card b{display:block;margin-top:4px}
+.hide{display:none}.quizopt{display:block;width:100%;text-align:left;margin:8px 0;padding:12px;border-radius:11px;border:0;background:#263a58;color:#fff}.correct{background:#27784a!important}.wrong{background:#8c3c45!important}
+.footer{padding:18px 16px 30px;opacity:.65;font-size:12px;line-height:1.6}
+</style></head>
+<body><div class="app">
+<div class="top"><div class="logo">👨‍🏫 Cyber Teacher Academy</div><div class="tag">বাংলায় হাতে-কলমে Cyber Security শেখা</div>
+<div class="tabs"><button class="tab active" onclick="show('learn',this)">📚 Lessons</button><button class="tab" onclick="show('quiz',this)">📝 Quiz</button><button class="tab" onclick="show('lab',this)">🧪 Safe Lab</button></div></div>
+
+<div id="learn">
+<div class="teacher"><div class="avatar">👨‍🏫</div><div><b id="teacherTitle">Lesson 01</b><div class="speech" id="speech">চলো, আজকের বিষয়টা বোর্ডে দেখে সহজভাবে শিখি।</div></div></div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+<div class="panel"><h2 id="title">লোড হচ্ছে...</h2><div class="diagram" id="diagram"></div><div class="tip" id="explain"></div></div>
+<div class="row"><button class="btn alt" onclick="prev()">← আগের</button><button class="btn" onclick="next()">পরের →</button></div>
+<div class="row"><button class="btn" onclick="voice()">🎙️ Teacher Voice চালাও</button></div>
+<audio id="audio" controls style="width:calc(100% - 32px);margin:0 16px 12px"></audio>
+<div id="lessonList"></div></div>
+
+<div id="quiz" class="hide"><div class="teacher"><div class="avatar">🧑‍🏫</div><div><b>Quiz Teacher</b><div class="speech">দেখি তো, তুমি কতটা শিখেছ!</div></div></div><div class="panel"><h2 id="qq">প্রশ্ন</h2><div id="opts"></div><div id="score"></div></div><div class="row"><button class="btn" onclick="newQuiz()">পরের প্রশ্ন</button></div></div>
+
+<div id="lab" class="hide"><div class="teacher"><div class="avatar">🧪</div><div><b>Safe Practice Lab</b><div class="speech">বাস্তব কারও system নয়—শুধু নিজের sandbox-এ practice।</div></div></div>
+<div class="card"><small>LAB 01</small><b>HTTP Request বুঝি</b><p>Browser → Request → Server → Response — এই flow বোর্ডে দেখে বোঝো।</p></div>
+<div class="card"><small>LAB 02</small><b>Phishing Detection</b><p>ইচ্ছাকৃতভাবে তৈরি উদাহরণ দেখে suspicious link ও domain শনাক্ত করো।</p></div>
+<div class="card"><small>LAB 03</small><b>CTF Basics</b><p>নিরাপদ challenge environment-এ clue খুঁজে flag বের করার practice।</p></div>
+<div class="card"><small>LAB 04</small><b>Web Security Sandbox</b><p>শিক্ষামূলক vulnerable app-এ input validation ও authentication-এর ধারণা পরীক্ষা।</p></div></div>
+
+<div class="footer">⚠️ এই Academy অনুমোদিত/নিজস্ব lab-এ নিরাপত্তা শেখানোর জন্য। অন্যের account, device বা network-এ অনুমতি ছাড়া পরীক্ষা করা যাবে না।</div>
+</div>
+<script>
+let lessons=[],idx=0,quiz=[],qi=0,points=0;
+fetch('content.json').then(r=>r.json()).then(d=>{lessons=d.lessons;quiz=d.quiz;render();newQuiz()});
+function render(){let x=lessons[idx];title.textContent=x.id+' • '+x.title;diagram.textContent=x.diagram;explain.textContent=x.explanation;teacherTitle.textContent='Lesson '+x.id; speech.textContent='চলো, '+x.title+' বিষয়টা বোর্ডে দেখে সহজভাবে শিখি।';bar.style.width=((idx+1)/lessons.length*100)+'%';}
+function next(){idx=Math.min(idx+1,lessons.length-1);render();scrollTo(0,0)}
+function prev(){idx=Math.max(idx-1,0);render();scrollTo(0,0)}
+function voice(){let a=document.getElementById('audio');if(!a.src)a.src='assets/teacher_voice.mp3';a.play().catch(()=>alert('Teacher voice file পাওয়া যায়নি।'))}
+function show(id,el){['learn','quiz','lab'].forEach(x=>document.getElementById(x).classList.toggle('hide',x!==id));document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));el.classList.add('active');}
+function newQuiz(){if(!quiz.length)return;let x=quiz[qi%quiz.length];qq.textContent='প্রশ্ন '+(qi%quiz.length+1)+': '+x.q;opts.innerHTML='';score.textContent='Score: '+points; x.options.forEach((o,n)=>{let b=document.createElement('button');b.className='quizopt';b.textContent=o;b.onclick=()=>{if(n===x.answer){b.classList.add('correct');points++;score.textContent='সঠিক! Score: '+points}else b.classList.add('wrong');[...opts.children].forEach((z,j)=>{z.disabled=true;if(j===x.answer)z.classList.add('correct')})};opts.appendChild(b)});qi++}
+</script></body></html>
